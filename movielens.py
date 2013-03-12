@@ -80,8 +80,12 @@ def getRecommendations(prefs, person, similarity = sim_pearson):
                 simSums.setdefault(item, 0)
                 simSums[item] += sim
     rankings = [ (total/simSums[item], item) 
-                for item, total in totals.items() if simSums[item] != 0]
+                for item, total in totals.items() if simSums[item] != 0 ]
     rankings.sort(reverse=True)
     return rankings
+
+def transform(prefs):
+    for person, movieLst in prefs.item():
+        for 
 
 
