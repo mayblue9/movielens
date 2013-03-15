@@ -85,7 +85,11 @@ def getRecommendations(prefs, person, similarity = sim_pearson):
     return rankings
 
 def transform(prefs):
-    for person, movieLst in prefs.item():
-        for 
+    result = {}
+    for person, movieLst in prefs.iteritem():
+        for movie, rate in movieLst.iteritem():
+            result.setdefault(movie, {})
+            result[movie][person] = rate
+    return result
 
 
